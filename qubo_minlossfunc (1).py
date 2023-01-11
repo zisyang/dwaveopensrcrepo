@@ -287,7 +287,7 @@ from sklearn.impute import SimpleImputer
 
 # set the connection information as an option
 endpoint = 'https://cloud.dwavesys.com/sapi'
-token = 'DEV-b26610eef83c3cebf6f0284432405a677fa63779'
+token = 'DEV-'
 solver = 'DW_2000Q_6'  ## QPU solver
 ## list of solvers
 ##QPU
@@ -488,7 +488,7 @@ def quantum_machine_learning(input_training_dataset_pd, input_testing_dataset_pd
 </pre>
 """
 
-!curl -o /content/titanic_train.csv https://raw.githubusercontent.com/bmwv12lmr/project-qml/main/ML_Pipeline/sprint_1/PostgreSQL/train.csv?token=GHSAT0AAAAAABXMJESQYIBVDV5Q7TFW67IEY3FAPZQ
+!curl -o /content/titanic_train.csv https://raw.githubusercontent.com/bmwv12lmr/project-qml/main/ML_Pipeline/sprint_1/PostgreSQL/train.csv?token=
 
 import pandas as pd
 data_path = '/content/'
