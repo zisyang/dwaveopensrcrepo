@@ -1,0 +1,8 @@
+dwave-ocean-sdk
+matplotlib
+pandas
+numpy
+itertools
+networkx
+dimod
+minorminer
