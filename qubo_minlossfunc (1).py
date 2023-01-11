@@ -109,7 +109,7 @@ from dwave.system.samplers import LeapHybridSampler
 
 # set the connection information as an option
 endpoint = 'https://cloud.dwavesys.com/sapi'
-token = 'DEV-b26610eef83c3cebf6f0284432405a677fa63779'
+token = 'DEV-'
 solver = 'DW_2000Q_6'  ## QPU solver
 ## list of solvers
 ##QPU
