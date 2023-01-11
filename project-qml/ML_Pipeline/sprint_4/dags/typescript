@@ -1,161 +1,0 @@
-Script started on Tue Nov  8 22:17:16 2022
-ls[1m[7m%[27m[1m[0m                                                                                                                                                ]7;file://Allens-Air.attlocal.net/Users/yswu/Documents/project-qml/ML_Pipeline/sprint_4/dags[0m[27m[24m[Jyswu@Allens-Air dags % [K[?2004hlls[?2004l
-Dockerfile	__pycache__	airflow.py	pylib		scripts		test.txt	train.csv	typescript
-[1m[7m%[27m[1m[0m                                                                                                                                                ]7;file://Allens-Air.attlocal.net/Users/yswu/Documents/project-qml/ML_Pipeline/sprint_4/dags[0m[27m[24m[Jyswu@Allens-Air dags % [K[?2004hlsdocker-compose up[17Dls               [15D  ccd ty  scripts[1m/[0m[0m [?2004l
-[1m[7m%[27m[1m[0m                                                                                                                                                ]7;file://Allens-Air.attlocal.net/Users/yswu/Documents/project-qml/ML_Pipeline/sprint_4/dags/scripts[0m[27m[24m[Jyswu@Allens-Air scripts % [K[?2004hlls[?2004l
-etl.sh			etl_working_dir.txt	ml.sh			ml_working_dir.txt	working_dir.txt
-[1m[7m%[27m[1m[0m                                                                                                                                                ]7;file://Allens-Air.attlocal.net/Users/yswu/Documents/project-qml/ML_Pipeline/sprint_4/dags/scripts[0m[27m[24m[Jyswu@Allens-Air scripts % [K[?2004hvvium  v  vvim  v  oopem  n ml
-[Jml.sh               ml_working_dir.txt[A[0m[27m[24m[26Copen ml[K.sh[1m [0m[0m [?2004l
-[J[1m[7m%[27m[1m[0m                                                                                                                                                ]7;file://Allens-Air.attlocal.net/Users/yswu/Documents/project-qml/ML_Pipeline/sprint_4/dags/scripts[0m[27m[24m[Jyswu@Allens-Air scripts % [K[?2004hlls[?2004l
-etl.sh			etl_working_dir.txt	ml.sh			ml_working_dir.txt	working_dir.txt
-[1m[7m%[27m[1m[0m                                                                                                                                                ]7;file://Allens-Air.attlocal.net/Users/yswu/Documents/project-qml/ML_Pipeline/sprint_4/dags/scripts[0m[27m[24m[Jyswu@Allens-Air scripts % [K[?2004hccd ..[?2004l
-[1m[7m%[27m[1m[0m                                                                                                                                                ]7;file://Allens-Air.attlocal.net/Users/yswu/Documents/project-qml/ML_Pipeline/sprint_4/dags[0m[27m[24m[Jyswu@Allens-Air dags % [K[?2004hll;s l  lls[?2004l
-Dockerfile	__pycache__	airflow.py	pylib		scripts		test.txt	train.csv	typescript
-[1m[7m%[27m[1m[0m                                                                                                                                                ]7;file://Allens-Air.attlocal.net/Users/yswu/Documents/project-qml/ML_Pipeline/sprint_4/dags[0m[27m[24m[Jyswu@Allens-Air dags % [K[?2004hccd ..[?2004l
-[1m[7m%[27m[1m[0m                                                                                                                                                ]7;file://Allens-Air.attlocal.net/Users/yswu/Documents/project-qml/ML_Pipeline/sprint_4[0m[27m[24m[Jyswu@Allens-Air sprint_4 % [K[?2004hlls[?2004l
-config			dags			docker-compose.yaml	logs			plugins
-[1m[7m%[27m[1m[0m                                                                                                                                                ]7;file://Allens-Air.attlocal.net/Users/yswu/Documents/project-qml/ML_Pipeline/sprint_4[0m[27m[24m[Jyswu@Allens-Air sprint_4 % [K[?2004hccd plugins[1m/[0m[0m [?2004l
-[1m[7m%[27m[1m[0m                                                                                                                                                ]7;file://Allens-Air.attlocal.net/Users/yswu/Documents/project-qml/ML_Pipeline/sprint_4/plugins[0m[27m[24m[Jyswu@Allens-Air plugins % [K[?2004hlls[?2004l
-__pycache__		qboost			qubo_minlossfunc.py
-[1m[7m%[27m[1m[0m                                                                                                                                                ]7;file://Allens-Air.attlocal.net/Users/yswu/Documents/project-qml/ML_Pipeline/sprint_4/plugins[0m[27m[24m[Jyswu@Allens-Air plugins % [K[?2004hvvim q
-[Jqboost/              qubo_minlossfunc.py[A[0m[27m[24m[26Cvim q[Kubo_minlossfunc.py[1m [0m[0m [?2004l
-[J[?1049h[>4;2m[?1h=[?2004h[?1004h[1;60r[?12h[?12l[22;2t[22;1t[27m[29m[m[H[2J[?25l[60;1H"qubo_minlossfunc.py" 462L, 14510B[2;1H▽[6n[2;1H  [3;1HPzz\[0%m[6n[3;1H           [1;1H[>c]10;?]11;?[1;1H# -*- coding: utf-8 -*-
-"""qubo_minlossfunc.ipynb[2;26H[K[3;1H[K[4;1HAutomatically generated by Colaboratory.
-
-Original file is located at
-    https://colab.research.google.com/drive/1hnBAyB9jovikgOst_HJ6jAu3lxNq0eh4
-
-# Qubo-nn example
-
-Above facing classification problem with the example
-
-# Qubo Implementation
-"""
-
-# set integers C
-C = [2, 10, 3, 8, 5, 7, 9, 5, 3, 2]
-N = len(C)
-
-# set the above Q_{ii} & Q_{ij} as a dictionary type such as {(i, j): Q_{ij}}
-Q = {}
-for i in range(N):
-    Q[i, i] = 4 * C[i] * (C[i] - sum(C))
-    for j in range(i + 1, N):[25;9HQ[i, j] = 8 * C[i] * C[j]
-
-# Commented out IPython magic to ensure Python compatibility.
-import numpy as np
-
-#ising model
-# set h_i & J_ij
-h = {}
-J = {}
-for i in range(N):
-    h[i] = 0
-    for j in range(i + 1, N):[37;9HJ[i, j] = 2 * C[i] * C[j]
-
-import dimod
-
-# convert from ising model to QUBO
-model = dimod.BinaryQuadraticModel(h, J, 0.0, vartype='SPIN')
-qubo, offset = model.to_qubo()
-"""## D-wave implement"""
-
-from dwave.system.samplers import DWaveSampler
-from dwave.system.composites import EmbeddingComposite
-from dwave.system.samplers import LeapHybridSampler
-
-# set the connection information as an option
-endpoint = 'https://cloud.dwavesys.com/sapi'
-token = 'DEV-b26610eef83c3cebf6f0284432405a677fa63779'
-solver = 'DW_2000Q_6'  ## QPU solver
-## list of solvers
-##QPU
-# DW_2000Q_6
-##Hybrid
-# hybrid_binary_quadratic_model_version2
-# hybrid_constrained_quadratic_model_version1[1;1H[?25h[27m[29m[m[H[2J[?25l[1;1H# -*- coding: utf-8 -*-
-"""qubo_minlossfunc.ipynb
-
-Automatically generated by Colaboratory.
-
-Original file is located at
-    https://colab.research.google.com/drive/1hnBAyB9jovikgOst_HJ6jAu3lxNq0eh4
-
-# Qubo-nn example
-
-Above facing classification problem with the example
-
-# Qubo Implementation
-"""
-
-# set integers C
-C = [2, 10, 3, 8, 5, 7, 9, 5, 3, 2]
-N = len(C)
-
-# set the above Q_{ii} & Q_{ij} as a dictionary type such as {(i, j): Q_{ij}}
-Q = {}
-for i in range(N):
-    Q[i, i] = 4 * C[i] * (C[i] - sum(C))
-    for j in range(i + 1, N):[25;9HQ[i, j] = 8 * C[i] * C[j]
-
-# Commented out IPython magic to ensure Python compatibility.
-import numpy as np
-
-#ising model
-# set h_i & J_ij
-h = {}
-J = {}
-for i in range(N):
-    h[i] = 0
-    for j in range(i + 1, N):[37;9HJ[i, j] = 2 * C[i] * C[j]
-
-import dimod
-
-# convert from ising model to QUBO
-model = dimod.BinaryQuadraticModel(h, J, 0.0, vartype='SPIN')
-qubo, offset = model.to_qubo()
-"""## D-wave implement"""
-
-from dwave.system.samplers import DWaveSampler
-from dwave.system.composites import EmbeddingComposite
-from dwave.system.samplers import LeapHybridSampler
-
-# set the connection information as an option
-endpoint = 'https://cloud.dwavesys.com/sapi'
-token = 'DEV-b26610eef83c3cebf6f0284432405a677fa63779'
-solver = 'DW_2000Q_6'  ## QPU solver
-## list of solvers
-##QPU
-# DW_2000Q_6
-##Hybrid
-# hybrid_binary_quadratic_model_version2
-# hybrid_constrained_quadratic_model_version1
-"qubo_minlossfunc.py" 462L, 14510B[1;1H[?25h[?25l[60;1H[K[60;1H:[?25hq[?25l[?2004l[>4;m[23;2t[23;1t[60;1H[K[60;1H[?1004l[?2004l[?1l>[?25h[>4;m[?1049l[1m[7m%[27m[1m[0m                                                                                                                                                ]7;file://Allens-Air.attlocal.net/Users/yswu/Documents/project-qml/ML_Pipeline/sprint_4/plugins[0m[27m[24m[Jyswu@Allens-Air plugins % [K[?2004hmmv qubo_minlossfunc.py[1m [0m[0m ..  ../dags[1m/[0m[0m/.[?2004l
-[1m[7m%[27m[1m[0m                                                                                                                                                ]7;file://Allens-Air.attlocal.net/Users/yswu/Documents/project-qml/ML_Pipeline/sprint_4/plugins[0m[27m[24m[Jyswu@Allens-Air plugins % [K[?2004hccd ..[?2004l
-[1m[7m%[27m[1m[0m                                                                                                                                                ]7;file://Allens-Air.attlocal.net/Users/yswu/Documents/project-qml/ML_Pipeline/sprint_4[0m[27m[24m[Jyswu@Allens-Air sprint_4 % [K[?2004hlls[?2004l
-config			dags			docker-compose.yaml	logs			plugins
-[1m[7m%[27m[1m[0m                                                                                                                                                ]7;file://Allens-Air.attlocal.net/Users/yswu/Documents/project-qml/ML_Pipeline/sprint_4[0m[27m[24m[Jyswu@Allens-Air sprint_4 % [K[?2004hccd dags[1m/[0m[0m [?2004l
-[1m[7m%[27m[1m[0m                                                                                                                                                ]7;file://Allens-Air.attlocal.net/Users/yswu/Documents/project-qml/ML_Pipeline/sprint_4/dags[0m[27m[24m[Jyswu@Allens-Air dags % [K[?2004hlls[?2004l
-Dockerfile		airflow.py		qubo_minlossfunc.py	test.txt		typescript
-__pycache__		pylib			scripts			train.csv
-[1m[7m%[27m[1m[0m                                                                                                                                                ]7;file://Allens-Air.attlocal.net/Users/yswu/Documents/project-qml/ML_Pipeline/sprint_4/dags[0m[27m[24m[Jyswu@Allens-Air dags % [K[?2004hmmvb   qubo_minlossfunc.py[1m [0m[0m ../plugins[1m/[0m[0m [?2004l
-[1m[7m%[27m[1m[0m                                                                                                                                                ]7;file://Allens-Air.attlocal.net/Users/yswu/Documents/project-qml/ML_Pipeline/sprint_4/dags[0m[27m[24m[Jyswu@Allens-Air dags % [K[?2004hccd p ..  c  lls ../
-[Jconfig/              dags/                docker-compose.yaml  logs/                plugins/[A[0m[27m[24m[23Cls ../[Kplugins[1m/[0m[0m/qi
-[J[A[39C 
-[J[Jqboost/              qubo_minlossfunc.py[A[0m[27m[24m[23Cls ../plugins/q[Kubo_minlossfunc.py[1m [0m[0m [?2004l
-[J../plugins/qubo_minlossfunc.py
-[1m[7m%[27m[1m[0m                                                                                                                                                ]7;file://Allens-Air.attlocal.net/Users/yswu/Documents/project-qml/ML_Pipeline/sprint_4/dags[0m[27m[24m[Jyswu@Allens-Air dags % [K[?2004hoopen   o  ls ../plugins/qubo_minlossfunc.pyl[P[31C [32D[P[31C [32Do ../plugins/qubo_minlossfunc.py[31Dop ../plugins/qubo_minlossfunc.py[31De ../plugins/qubo_minlossfunc.py[31Dn ../plugins/qubo_minlossfunc.py[31D[?2004l
-[1m[7m%[27m[1m[0m                                                                                                                                                ]7;file://Allens-Air.attlocal.net/Users/yswu/Documents/project-qml/ML_Pipeline/sprint_4/dags[0m[27m[24m[Jyswu@Allens-Air dags % [K[?2004hlls -altr[?2004l
-total 216
--rw-r--r--@  1 yswu  staff  61194 Nov  6 13:58 train.csv
--rw-r--r--@  1 yswu  staff     15 Nov  6 18:04 test.txt
--rw-r--r--@  1 yswu  staff   6148 Nov  6 19:33 .DS_Store
-drwxr-xr-x@  9 yswu  staff    288 Nov  8 21:09 ..
-drwxr-xr-x@  7 yswu  staff    224 Nov  8 21:28 scripts
-drwxr-xr-x@ 11 yswu  staff    352 Nov  8 21:41 .
-drwxr-xr-x@  3 yswu  staff     96 Nov  8 21:44 pylib
--rw-r--r--@  1 yswu  staff    406 Nov  8 22:23 Dockerfile
--rw-r--r--@  1 yswu  staff  12202 Nov  8 22:36 typescript
-drwxr-xr-x@  4 yswu  staff    128 Nov  8 22:37 __pycache__
--rw-r--r--@  1 yswu  staff  19347 Nov  8 22:37 airflow.py
-[1m[7m%[27m[1m[0m                                                                                                                                                ]7;file://Allens-Air.attlocal.net/Users/yswu/Documents/project-qml/ML_Pipeline/sprint_4/dags[0m[27m[24m[Jyswu@Allens-Air dags % [K[?2004hls -altr[8Dopen ../plugins/qubo_minlossfunc.py[35Dls[P[P[31C  [33Dopen ../plugins/qubo_minlossfunc.py[35Dls -altr                           [27D[8D        [8D
